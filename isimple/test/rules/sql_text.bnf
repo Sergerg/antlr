@@ -1,9 +1,13 @@
 (* Правила для SQL *)
-query = token (<whitespace> token)*
-<token> = keyword | !keyword identifier
-whitespace = #'\\s+'
+query = select <whitespace> from
+select = <select-kw> <whitespace> all
+from = <from-kw> <whitespace> table
+
+select-kw = 'select'
+from-kw = 'from'
+
+all = '*'
+table = identifier
+
+whitespace = #'\s+'
 identifier = #'[a-zA-Z]+'
-keyword = 'select' | 'from'
-(*
-sentence = token (<whitespace> token)*
-*)
