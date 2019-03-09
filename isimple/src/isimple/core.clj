@@ -2,7 +2,7 @@
   (:require [clojure.string :as str])
   (:require [instaparse.core :as insta]))
 
-(use 'rhizome.viz)
+;(use 'rhizome.viz)
 
 (defn foo!
   "I don't do a whole lot."
