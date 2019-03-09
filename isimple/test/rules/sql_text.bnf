@@ -1,9 +1,10 @@
 (* Правила для SQL *)
 query = select <whitespace> from
-select = <select-kw> <whitespace> all
+select = <select-kw> <whitespace> (all | (select-part)?)
 from = <from-kw> <whitespace> table
 table = table-name (<whitespace> table-alias)?
 
+select-part = table-alias <'.'> all
 select-kw = 'select'
 from-kw = 'from'
 

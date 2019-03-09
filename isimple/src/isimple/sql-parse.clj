@@ -26,6 +26,9 @@
     :output-file "images/ambiguous-tokenizer-1.png"
     :options {:dpi 63})
 
+
+
+
  ;; SQL:
 (def parse-sql
   (insta/parser (io/resource "rules/sql_text.bnf")
@@ -49,6 +52,14 @@
 (insta/visualize
  (insta/parses parse-sql test-query2)
  :output-file "images/parse-sql-2.png"
+ :options {:dpi 63})
+
+(def test-query3 "select t.*
+    from table t")
+(parse-sql test-query3)
+(insta/visualize
+ (insta/parses parse-sql test-query3)
+ :output-file "images/parse-sql-3.png"
  :options {:dpi 63})
 
 
