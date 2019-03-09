@@ -35,9 +35,22 @@
 (parse-sql test-query)
 (insta/parses parse-sql test-query)
 (insta/visualize
- (insta/parses parse-sql test-query)
- :output-file "images/parse-sql-1.png"
+    (insta/parses parse-sql test-query)
+    :output-file "images/parse-sql-0.png"
+    :options {:dpi 63})
+
+(def test-query1 "select *
+    from table")
+(parse-sql test-query1)
+
+(def test-query2 "select *
+    from table t")
+(parse-sql test-query2)
+(insta/visualize
+ (insta/parses parse-sql test-query2)
+ :output-file "images/parse-sql-2.png"
  :options {:dpi 63})
+
 
 ;; Каталог TEST
 (io/resource "rules/sql.bnf")

@@ -2,12 +2,14 @@
 query = select <whitespace> from
 select = <select-kw> <whitespace> all
 from = <from-kw> <whitespace> table
+table = table-name (<whitespace> table-alias)?
 
 select-kw = 'select'
 from-kw = 'from'
 
 all = '*'
-table = identifier
+table-name = identifier
+table-alias = identifier
 
 whitespace = #'\s+'
 identifier = #'[a-zA-Z]+'
