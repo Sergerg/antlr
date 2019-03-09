@@ -16,3 +16,6 @@ pom.xml.asc
 .cpcache/
 
 /isimple/images/
+
+/.idea/
+antlr.code-workspace
