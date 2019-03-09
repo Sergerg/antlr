@@ -13,6 +13,8 @@
 (def parse-sql
   (insta/parser (io/resource "rules/sql_text.bnf")))
 
+(parse-sql "select")
+
 ;; Каталог TEST
 (io/resource "rules/sql.bnf")
 (.getCanonicalPath (clojure.java.io/file "."))
