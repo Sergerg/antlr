@@ -1,4 +1,4 @@
-# Правила для SQL
+(* Правила для SQL *)
 
 whitespace = #'\\s+'
 identifier = #'[a-zA-Z]+'
