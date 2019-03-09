@@ -28,7 +28,8 @@
 
  ;; SQL:
 (def parse-sql
-  (insta/parser (io/resource "rules/sql_text.bnf")))
+  (insta/parser (io/resource "rules/sql_text.bnf")
+                :output-format :enlive))
 
 (def test-query "select * from table")
 (parse-sql test-query)
