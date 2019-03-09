@@ -79,6 +79,14 @@
  :output-file "images/parse-sql-5.png"
  :options {:dpi 63})
 
+(def test-query6 "select t.a , t.b,u.*
+    from table t, user u")
+(parse-sql test-query6) ;; Не работает!
+(insta/visualize
+ (insta/parses parse-sql test-query6)
+ :output-file "images/parse-sql-6.png"
+ :options {:dpi 63})
+
 
 ;; Каталог TEST
 (io/resource "rules/sql.bnf")

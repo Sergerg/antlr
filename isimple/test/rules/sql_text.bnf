@@ -1,7 +1,9 @@
 (* Правила для SQL *)
 query = select <whitespace> from
-select = <select-kw> <whitespace> (all | select-part (table-dot select-part)* )
-from = <from-kw> <whitespace> table
+select = <select-kw> <whitespace> (all | select-part (<table-dot> select-part)* )
+from = <from-kw> <whitespace> tables
+
+tables = table (<table-dot> table)*
 table = table-name (<whitespace> table-alias)?
 
 select-part = (table-alias <column-dot> all) | (table-alias <column-dot> column-name)
@@ -13,8 +15,8 @@ all = '*'
 table-name = identifier
 table-alias = identifier
 
-column-dot = <'.'>
-table-dot = <','>
+column-dot = <whitespace>? <'.'> <whitespace>?
+table-dot = <whitespace>? <','> <whitespace>?
 
 whitespace = #'\s+'
 identifier = #'[a-zA-Z]+'
