@@ -63,6 +63,23 @@
  :options {:dpi 63})
 
 
+(def test-query4 "select t.a
+    from table t")
+(parse-sql test-query4)
+(insta/visualize
+ (insta/parses parse-sql test-query4)
+ :output-file "images/parse-sql-4.png"
+ :options {:dpi 63})
+
+(def test-query5 "select t.a,t.b
+    from table t")
+(parse-sql test-query5)
+(insta/visualize
+ (insta/parses parse-sql test-query5)
+ :output-file "images/parse-sql-5.png"
+ :options {:dpi 63})
+
+
 ;; Каталог TEST
 (io/resource "rules/sql.bnf")
 (.getCanonicalPath (clojure.java.io/file "."))
